@@ -1,0 +1,6 @@
+# Master-thesis-codes
+The goal of this thesis project is to release traffic scenario classification models to identify traffic scenarios from driving data. 
+
+The codes of Long Short Term Memory are presented including feature selection and the models using Python. Public data which are used in this project includes DataFrontTargets.csv, DataLane.csv and DataWsu.csv from the link below. 
+
+https://data.transportation.gov/Automobiles/Safety-Pilot-Model-Deployment-Data/a7qq-9vfe
