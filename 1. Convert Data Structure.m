@@ -2,7 +2,7 @@ clc;
 clear;
 close all;
 
-File_Name = 'C:\Users\XWANG221\Downloads\TrafficNet\df10.csv';
+File_Name = 'C:\Users\XWANG221\Downloads\TrafficNet.csv';
 Traffic_Net_Data = csvread(File_Name,1,0);
 % save('Traffic_Net_Data.mat' , 'Traffic_Net_Data' ,'-v7.3' );
 
@@ -27,7 +27,7 @@ Traffic_Net_Data(Index,1) = 0;
 
 for i = 1:1:length(Index)
     clc;
-    fprintf('数据加载完成，处理进度：%3.6f%%\n',floor(i/length(Index)*100000000)/1000000);
+    fprintf('Data loading is complete, processing progress：%3.6f%%\n',floor(i/length(Index)*100000000)/1000000);
     
     Target_ID_Temp = Target_ID(Index(i));
     Row = Index(i) - Target_ID_Temp + 1;
@@ -57,8 +57,8 @@ Traffic_Net_Data_New = [Traffic_Net_Data(:,1:2) Traffic_Net_Data(:,4:15) Data_Te
 Index_New = find(Traffic_Net_Data_New(:,1) ~= 0);
 Traffic_Net_Data_New = Traffic_Net_Data_New(Index_New,:);
 
-fprintf('数据拼接完成，开始存储');
+fprintf('Data splicing is complete, start storing');
 
-File_Name_New = 'df10_ToVolvo.csv';
+File_Name_New = 'TrafficNet_ToVolvo.csv';
 csvwrite(File_Name_New,Traffic_Net_Data_New);
 fclose all;
